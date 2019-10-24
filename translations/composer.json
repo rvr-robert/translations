@@ -1,0 +1,24 @@
+{
+  "name":"custom/module-translations",
+  "description": "Magento 2 translations module",
+  "type": "magento2-module",
+  "version": "1.0.0",
+  "require": {
+    "magento/module-translation": "100.*",
+    "php": "~7.0.0|~7.1.0|~7.2.0"
+  },
+  "authors": [
+    {
+      "name": "Robert Rakcheiev",
+      "email": "antikill8@gmail.com"
+    }
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Custom\\Translations\\": ""
+    }
+  }
+}

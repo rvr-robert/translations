@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <preference for="Magento\Translation\Model\ResourceModel\Translate" type="Custom\Translations\Model\ResourceModel\Translate" />
+    <preference for="Magento\Translation\Model\FileManager" type="Custom\Translations\Model\FileManager" />
+    <preference for="Custom\Translations\Api\TranslationsRepositoryInterface" type="Custom\Translations\Model\TranslationsRepository" />
+    <preference for="Custom\Translations\Api\Data\TranslationsInterface" type="Custom\Translations\Model\Translations" />
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="custom_translations_translation_listing_data_source" xsi:type="string">Custom\Translations\Model\ResourceModel\Translations\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Custom\Translations\Model\ResourceModel\Translations\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">translation</argument>
+            <argument name="resourceModel" xsi:type="string">Custom\Translations\Model\ResourceModel\Translations</argument>
+        </arguments>
+    </virtualType>
+</config>
